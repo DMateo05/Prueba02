@@ -1,0 +1,302 @@
+2024-06-24 18:08:06,499 p=3444395 u=upszot n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-06-24 18:08:06,598 p=3444395 u=upszot n=ansible | PLAY [all] **********************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:06,609 p=3444395 u=upszot n=ansible | TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,746 p=3444395 u=upszot n=ansible | ok: [localhost]
+2024-06-24 18:08:07,775 p=3444395 u=upszot n=ansible | TASK [include_role : 2do_parcial] ***********************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,805 p=3444395 u=upszot n=ansible | TASK [2do_parcial : debug] ******************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,817 p=3444395 u=upszot n=ansible | ok: [localhost] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-06-24 18:08:07,836 p=3444395 u=upszot n=ansible | TASK [Otra tarea] ***************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,851 p=3444395 u=upszot n=ansible | ok: [localhost] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-06-24 18:08:07,885 p=3444395 u=upszot n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,885 p=3444395 u=upszot n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-07-01 22:46:33,201 p=6489 u=dmateo05 n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-07-01 22:46:33,667 p=6489 u=dmateo05 n=ansible | PLAY [all] *****************************************************************************************************************************
+2024-07-01 22:46:33,735 p=6489 u=dmateo05 n=ansible | TASK [Gathering Facts] *****************************************************************************************************************
+2024-07-01 22:46:37,362 p=6489 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 22:46:37,390 p=6489 u=dmateo05 n=ansible | TASK [include_role : 2do_parcial] ******************************************************************************************************
+2024-07-01 22:46:37,459 p=6489 u=dmateo05 n=ansible | TASK [2do_parcial : debug] *************************************************************************************************************
+2024-07-01 22:46:37,510 p=6489 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-07-01 22:46:37,563 p=6489 u=dmateo05 n=ansible | TASK [include_role : recu] *************************************************************************************************************
+2024-07-01 22:46:37,708 p=6489 u=dmateo05 n=ansible | TASK [Otra tarea] **********************************************************************************************************************
+2024-07-01 22:46:37,771 p=6489 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-07-01 22:46:37,839 p=6489 u=dmateo05 n=ansible | PLAY RECAP *****************************************************************************************************************************
+2024-07-01 22:46:37,839 p=6489 u=dmateo05 n=ansible | 127.0.0.1                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-07-01 22:58:57,343 p=6847 u=dmateo05 n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-07-01 22:58:57,520 p=6847 u=dmateo05 n=ansible | PLAY [all] *****************************************************************************************************************************
+2024-07-01 22:58:57,580 p=6847 u=dmateo05 n=ansible | TASK [Gathering Facts] *****************************************************************************************************************
+2024-07-01 22:59:00,587 p=6847 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 22:59:00,622 p=6847 u=dmateo05 n=ansible | TASK [include_role : 2do_parcial] ******************************************************************************************************
+2024-07-01 22:59:00,695 p=6847 u=dmateo05 n=ansible | TASK [2do_parcial : debug] *************************************************************************************************************
+2024-07-01 22:59:00,740 p=6847 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-07-01 22:59:00,776 p=6847 u=dmateo05 n=ansible | TASK [include_role : recu] *************************************************************************************************************
+2024-07-01 22:59:00,914 p=6847 u=dmateo05 n=ansible | TASK [recu : debug] ********************************************************************************************************************
+2024-07-01 22:59:00,937 p=6847 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas recu"
+}
+2024-07-01 22:59:00,952 p=6847 u=dmateo05 n=ansible | TASK [recu : Crear directorios en /tmp/multi_Pruebas_borrame/] *************************************************************************
+2024-07-01 22:59:01,944 p=6847 u=dmateo05 n=ansible | changed: [127.0.0.1] => (item=log)
+2024-07-01 22:59:02,670 p=6847 u=dmateo05 n=ansible | changed: [127.0.0.1] => (item=config)
+2024-07-01 22:59:03,401 p=6847 u=dmateo05 n=ansible | changed: [127.0.0.1] => (item=otro)
+2024-07-01 22:59:03,437 p=6847 u=dmateo05 n=ansible | TASK [recu : Agrego archivo desde template] ********************************************************************************************
+2024-07-01 22:59:03,732 p=6847 u=dmateo05 n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2024-07-01 22:59:03,733 p=6847 u=dmateo05 n=ansible | fatal: [127.0.0.1]: FAILED! => {"changed": false, "msg": "Could not find or access 'template_01.j2'\nSearched in:\n\t/home/dmateo05/RepoGit/UTN-FRA_SO_Examenes/202406/ansible/roles/recu/templates/template_01.j2\n\t/home/dmateo05/RepoGit/UTN-FRA_SO_Examenes/202406/ansible/roles/recu/template_01.j2\n\t/home/dmateo05/RepoGit/UTN-FRA_SO_Examenes/202406/ansible/roles/recu/tasks/templates/template_01.j2\n\t/home/dmateo05/RepoGit/UTN-FRA_SO_Examenes/202406/ansible/roles/recu/tasks/template_01.j2\n\t/home/dmateo05/RepoGit/UTN-FRA_SO_Examenes/202406/ansible/templates/template_01.j2\n\t/home/dmateo05/RepoGit/UTN-FRA_SO_Examenes/202406/ansible/template_01.j2 on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2024-07-01 22:59:03,734 p=6847 u=dmateo05 n=ansible | PLAY RECAP *****************************************************************************************************************************
+2024-07-01 22:59:03,735 p=6847 u=dmateo05 n=ansible | 127.0.0.1                  : ok=4    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-07-01 23:02:02,394 p=7524 u=dmateo05 n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-07-01 23:02:02,562 p=7524 u=dmateo05 n=ansible | PLAY [all] *****************************************************************************************************************************
+2024-07-01 23:02:02,613 p=7524 u=dmateo05 n=ansible | TASK [Gathering Facts] *****************************************************************************************************************
+2024-07-01 23:02:05,978 p=7524 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 23:02:06,011 p=7524 u=dmateo05 n=ansible | TASK [include_role : 2do_parcial] ******************************************************************************************************
+2024-07-01 23:02:06,088 p=7524 u=dmateo05 n=ansible | TASK [2do_parcial : debug] *************************************************************************************************************
+2024-07-01 23:02:06,164 p=7524 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-07-01 23:02:06,211 p=7524 u=dmateo05 n=ansible | TASK [include_role : recu] *************************************************************************************************************
+2024-07-01 23:02:06,330 p=7524 u=dmateo05 n=ansible | TASK [recu : debug] ********************************************************************************************************************
+2024-07-01 23:02:06,392 p=7524 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas recu"
+}
+2024-07-01 23:02:06,408 p=7524 u=dmateo05 n=ansible | TASK [recu : Crear directorios en /tmp/multi_Pruebas_borrame/] *************************************************************************
+2024-07-01 23:02:07,501 p=7524 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=log)
+2024-07-01 23:02:08,303 p=7524 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=config)
+2024-07-01 23:02:09,173 p=7524 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=otro)
+2024-07-01 23:02:09,185 p=7524 u=dmateo05 n=ansible | TASK [recu : Agrego archivo desde template] ********************************************************************************************
+2024-07-01 23:02:11,322 p=7524 u=dmateo05 n=ansible | changed: [127.0.0.1]
+2024-07-01 23:02:11,355 p=7524 u=dmateo05 n=ansible | TASK [Otra tarea] **********************************************************************************************************************
+2024-07-01 23:02:11,392 p=7524 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-07-01 23:02:11,494 p=7524 u=dmateo05 n=ansible | PLAY RECAP *****************************************************************************************************************************
+2024-07-01 23:02:11,494 p=7524 u=dmateo05 n=ansible | 127.0.0.1                  : ok=6    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-07-01 23:05:30,254 p=8422 u=dmateo05 n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-07-01 23:05:30,420 p=8422 u=dmateo05 n=ansible | PLAY [all] *****************************************************************************************************************************
+2024-07-01 23:05:30,480 p=8422 u=dmateo05 n=ansible | TASK [Gathering Facts] *****************************************************************************************************************
+2024-07-01 23:05:34,665 p=8422 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 23:05:34,711 p=8422 u=dmateo05 n=ansible | TASK [include_role : 2do_parcial] ******************************************************************************************************
+2024-07-01 23:05:34,792 p=8422 u=dmateo05 n=ansible | TASK [2do_parcial : debug] *************************************************************************************************************
+2024-07-01 23:05:34,844 p=8422 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-07-01 23:05:34,880 p=8422 u=dmateo05 n=ansible | TASK [include_role : recu] *************************************************************************************************************
+2024-07-01 23:05:34,980 p=8422 u=dmateo05 n=ansible | TASK [recu : debug] ********************************************************************************************************************
+2024-07-01 23:05:35,012 p=8422 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas recu"
+}
+2024-07-01 23:05:35,027 p=8422 u=dmateo05 n=ansible | TASK [recu : Crear directorios en /tmp/multi_Pruebas_borrame/] *************************************************************************
+2024-07-01 23:05:36,087 p=8422 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=log)
+2024-07-01 23:05:36,886 p=8422 u=dmateo05 n=ansible | changed: [127.0.0.1] => (item=config)
+2024-07-01 23:05:37,735 p=8422 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=otro)
+2024-07-01 23:05:37,753 p=8422 u=dmateo05 n=ansible | TASK [recu : Agrego archivo desde template] ********************************************************************************************
+2024-07-01 23:05:39,777 p=8422 u=dmateo05 n=ansible | changed: [127.0.0.1]
+2024-07-01 23:05:39,804 p=8422 u=dmateo05 n=ansible | TASK [Otra tarea] **********************************************************************************************************************
+2024-07-01 23:05:39,836 p=8422 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-07-01 23:05:39,898 p=8422 u=dmateo05 n=ansible | PLAY RECAP *****************************************************************************************************************************
+2024-07-01 23:05:39,899 p=8422 u=dmateo05 n=ansible | 127.0.0.1                  : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-07-01 23:09:11,064 p=9222 u=dmateo05 n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-07-01 23:09:11,223 p=9222 u=dmateo05 n=ansible | PLAY [all] *****************************************************************************************************************************
+2024-07-01 23:09:11,265 p=9222 u=dmateo05 n=ansible | TASK [Gathering Facts] *****************************************************************************************************************
+2024-07-01 23:09:15,099 p=9222 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 23:09:15,128 p=9222 u=dmateo05 n=ansible | TASK [include_role : 2do_parcial] ******************************************************************************************************
+2024-07-01 23:09:15,185 p=9222 u=dmateo05 n=ansible | TASK [2do_parcial : debug] *************************************************************************************************************
+2024-07-01 23:09:15,232 p=9222 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-07-01 23:09:15,252 p=9222 u=dmateo05 n=ansible | TASK [include_role : recu] *************************************************************************************************************
+2024-07-01 23:09:15,296 p=9222 u=dmateo05 n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/home/dmateo05/RepoGit/UTN-FRA_SO_Examenes/202406/ansible/roles/recu/tasks/main.yml': line 23, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: "add NOPASSWD in sudores for group {{ GROUP_ADMIN }}"
+    ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2024-07-01 23:14:17,163 p=9526 u=dmateo05 n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-07-01 23:14:17,327 p=9526 u=dmateo05 n=ansible | PLAY [all] *****************************************************************************************************************************
+2024-07-01 23:14:17,379 p=9526 u=dmateo05 n=ansible | TASK [Gathering Facts] *****************************************************************************************************************
+2024-07-01 23:14:21,461 p=9526 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 23:14:21,494 p=9526 u=dmateo05 n=ansible | TASK [include_role : 2do_parcial] ******************************************************************************************************
+2024-07-01 23:14:21,570 p=9526 u=dmateo05 n=ansible | TASK [2do_parcial : debug] *************************************************************************************************************
+2024-07-01 23:14:21,604 p=9526 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-07-01 23:14:21,640 p=9526 u=dmateo05 n=ansible | TASK [include_role : recu] *************************************************************************************************************
+2024-07-01 23:14:21,704 p=9526 u=dmateo05 n=ansible | ERROR! The vars/main.yml file for role 'recu' must contain a dictionary of variables
+2024-07-01 23:16:01,856 p=9794 u=dmateo05 n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-07-01 23:16:02,009 p=9794 u=dmateo05 n=ansible | PLAY [all] *****************************************************************************************************************************
+2024-07-01 23:16:02,047 p=9794 u=dmateo05 n=ansible | TASK [Gathering Facts] *****************************************************************************************************************
+2024-07-01 23:16:05,964 p=9794 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 23:16:05,996 p=9794 u=dmateo05 n=ansible | TASK [include_role : 2do_parcial] ******************************************************************************************************
+2024-07-01 23:16:06,073 p=9794 u=dmateo05 n=ansible | TASK [2do_parcial : debug] *************************************************************************************************************
+2024-07-01 23:16:06,142 p=9794 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-07-01 23:16:06,178 p=9794 u=dmateo05 n=ansible | TASK [include_role : recu] *************************************************************************************************************
+2024-07-01 23:16:06,244 p=9794 u=dmateo05 n=ansible | ERROR! The vars/main.yml file for role 'recu' must contain a dictionary of variables
+2024-07-01 23:17:01,013 p=10016 u=dmateo05 n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-07-01 23:17:01,197 p=10016 u=dmateo05 n=ansible | PLAY [all] *****************************************************************************************************************************
+2024-07-01 23:17:01,250 p=10016 u=dmateo05 n=ansible | TASK [Gathering Facts] *****************************************************************************************************************
+2024-07-01 23:17:04,925 p=10016 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 23:17:04,955 p=10016 u=dmateo05 n=ansible | TASK [include_role : 2do_parcial] ******************************************************************************************************
+2024-07-01 23:17:05,010 p=10016 u=dmateo05 n=ansible | TASK [2do_parcial : debug] *************************************************************************************************************
+2024-07-01 23:17:05,057 p=10016 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-07-01 23:17:05,088 p=10016 u=dmateo05 n=ansible | TASK [include_role : recu] *************************************************************************************************************
+2024-07-01 23:17:05,153 p=10016 u=dmateo05 n=ansible | ERROR! The vars/main.yml file for role 'recu' must contain a dictionary of variables
+2024-07-01 23:19:28,978 p=10272 u=dmateo05 n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-07-01 23:19:29,146 p=10272 u=dmateo05 n=ansible | PLAY [all] *****************************************************************************************************************************
+2024-07-01 23:19:29,192 p=10272 u=dmateo05 n=ansible | TASK [Gathering Facts] *****************************************************************************************************************
+2024-07-01 23:19:33,194 p=10272 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 23:19:33,219 p=10272 u=dmateo05 n=ansible | TASK [include_role : 2do_parcial] ******************************************************************************************************
+2024-07-01 23:19:33,265 p=10272 u=dmateo05 n=ansible | TASK [2do_parcial : debug] *************************************************************************************************************
+2024-07-01 23:19:33,297 p=10272 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-07-01 23:19:33,323 p=10272 u=dmateo05 n=ansible | TASK [include_role : recu] *************************************************************************************************************
+2024-07-01 23:19:33,410 p=10272 u=dmateo05 n=ansible | TASK [recu : debug] ********************************************************************************************************************
+2024-07-01 23:19:33,440 p=10272 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas recu"
+}
+2024-07-01 23:19:33,460 p=10272 u=dmateo05 n=ansible | TASK [recu : Crear directorios en /tmp/multi_Pruebas_borrame/] *************************************************************************
+2024-07-01 23:19:34,464 p=10272 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=log)
+2024-07-01 23:19:35,272 p=10272 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=config)
+2024-07-01 23:19:36,017 p=10272 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=otro)
+2024-07-01 23:19:36,029 p=10272 u=dmateo05 n=ansible | TASK [recu : Agrego archivo desde template] ********************************************************************************************
+2024-07-01 23:19:37,525 p=10272 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 23:19:37,547 p=10272 u=dmateo05 n=ansible | TASK [recu : add NOPASSWD in sudores for group docker] *********************************************************************************
+2024-07-01 23:19:39,006 p=10272 u=dmateo05 n=ansible | changed: [127.0.0.1]
+2024-07-01 23:19:39,025 p=10272 u=dmateo05 n=ansible | TASK [Otra tarea] **********************************************************************************************************************
+2024-07-01 23:19:39,058 p=10272 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-07-01 23:19:39,113 p=10272 u=dmateo05 n=ansible | PLAY RECAP *****************************************************************************************************************************
+2024-07-01 23:19:39,113 p=10272 u=dmateo05 n=ansible | 127.0.0.1                  : ok=7    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-07-01 23:20:55,133 p=11152 u=dmateo05 n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-07-01 23:20:55,298 p=11152 u=dmateo05 n=ansible | PLAY [all] *****************************************************************************************************************************
+2024-07-01 23:20:55,339 p=11152 u=dmateo05 n=ansible | TASK [Gathering Facts] *****************************************************************************************************************
+2024-07-01 23:20:59,140 p=11152 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 23:20:59,166 p=11152 u=dmateo05 n=ansible | TASK [include_role : 2do_parcial] ******************************************************************************************************
+2024-07-01 23:20:59,221 p=11152 u=dmateo05 n=ansible | TASK [2do_parcial : debug] *************************************************************************************************************
+2024-07-01 23:20:59,248 p=11152 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-07-01 23:20:59,278 p=11152 u=dmateo05 n=ansible | TASK [include_role : recu] *************************************************************************************************************
+2024-07-01 23:20:59,350 p=11152 u=dmateo05 n=ansible | TASK [recu : debug] ********************************************************************************************************************
+2024-07-01 23:20:59,377 p=11152 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas recu"
+}
+2024-07-01 23:20:59,397 p=11152 u=dmateo05 n=ansible | TASK [recu : Crear directorios en /tmp/multi_Pruebas_borrame/] *************************************************************************
+2024-07-01 23:21:00,380 p=11152 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=log)
+2024-07-01 23:21:01,072 p=11152 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=config)
+2024-07-01 23:21:01,792 p=11152 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=otro)
+2024-07-01 23:21:01,805 p=11152 u=dmateo05 n=ansible | TASK [recu : Agrego archivo desde template] ********************************************************************************************
+2024-07-01 23:21:03,324 p=11152 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 23:21:03,341 p=11152 u=dmateo05 n=ansible | TASK [recu : add NOPASSWD in sudores for group docker] *********************************************************************************
+2024-07-01 23:21:04,293 p=11152 u=dmateo05 n=ansible | changed: [127.0.0.1]
+2024-07-01 23:21:04,321 p=11152 u=dmateo05 n=ansible | TASK [Otra tarea] **********************************************************************************************************************
+2024-07-01 23:21:04,348 p=11152 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-07-01 23:21:04,403 p=11152 u=dmateo05 n=ansible | PLAY RECAP *****************************************************************************************************************************
+2024-07-01 23:21:04,403 p=11152 u=dmateo05 n=ansible | 127.0.0.1                  : ok=7    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-07-01 23:21:37,975 p=12021 u=dmateo05 n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-07-01 23:21:38,113 p=12021 u=dmateo05 n=ansible | PLAY [all] *****************************************************************************************************************************
+2024-07-01 23:21:38,157 p=12021 u=dmateo05 n=ansible | TASK [Gathering Facts] *****************************************************************************************************************
+2024-07-01 23:21:41,843 p=12021 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 23:21:41,873 p=12021 u=dmateo05 n=ansible | TASK [include_role : 2do_parcial] ******************************************************************************************************
+2024-07-01 23:21:41,933 p=12021 u=dmateo05 n=ansible | TASK [2do_parcial : debug] *************************************************************************************************************
+2024-07-01 23:21:41,977 p=12021 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-07-01 23:21:42,009 p=12021 u=dmateo05 n=ansible | TASK [include_role : recu] *************************************************************************************************************
+2024-07-01 23:21:42,093 p=12021 u=dmateo05 n=ansible | TASK [recu : debug] ********************************************************************************************************************
+2024-07-01 23:21:42,134 p=12021 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas recu"
+}
+2024-07-01 23:21:42,147 p=12021 u=dmateo05 n=ansible | TASK [recu : Crear directorios en /tmp/multi_Pruebas_borrame/] *************************************************************************
+2024-07-01 23:21:43,167 p=12021 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=log)
+2024-07-01 23:21:43,863 p=12021 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=config)
+2024-07-01 23:21:44,578 p=12021 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=otro)
+2024-07-01 23:21:44,592 p=12021 u=dmateo05 n=ansible | TASK [recu : Agrego archivo desde template] ********************************************************************************************
+2024-07-01 23:21:46,092 p=12021 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 23:21:46,108 p=12021 u=dmateo05 n=ansible | TASK [recu : add NOPASSWD in sudores for group docker] *********************************************************************************
+2024-07-01 23:21:47,073 p=12021 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 23:21:47,091 p=12021 u=dmateo05 n=ansible | TASK [Otra tarea] **********************************************************************************************************************
+2024-07-01 23:21:47,122 p=12021 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-07-01 23:21:47,173 p=12021 u=dmateo05 n=ansible | PLAY RECAP *****************************************************************************************************************************
+2024-07-01 23:21:47,173 p=12021 u=dmateo05 n=ansible | 127.0.0.1                  : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-07-01 23:25:18,447 p=12888 u=dmateo05 n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-07-01 23:25:18,615 p=12888 u=dmateo05 n=ansible | PLAY [all] *****************************************************************************************************************************
+2024-07-01 23:25:18,677 p=12888 u=dmateo05 n=ansible | TASK [Gathering Facts] *****************************************************************************************************************
+2024-07-01 23:25:22,673 p=12888 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 23:25:22,700 p=12888 u=dmateo05 n=ansible | TASK [include_role : 2do_parcial] ******************************************************************************************************
+2024-07-01 23:25:22,772 p=12888 u=dmateo05 n=ansible | TASK [2do_parcial : debug] *************************************************************************************************************
+2024-07-01 23:25:22,803 p=12888 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-07-01 23:25:22,830 p=12888 u=dmateo05 n=ansible | TASK [include_role : recu] *************************************************************************************************************
+2024-07-01 23:25:22,927 p=12888 u=dmateo05 n=ansible | TASK [recu : debug] ********************************************************************************************************************
+2024-07-01 23:25:22,950 p=12888 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas recu"
+}
+2024-07-01 23:25:22,965 p=12888 u=dmateo05 n=ansible | TASK [recu : Crear directorios en /tmp/multi_Pruebas_borrame/] *************************************************************************
+2024-07-01 23:25:23,982 p=12888 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=log)
+2024-07-01 23:25:24,668 p=12888 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=config)
+2024-07-01 23:25:25,417 p=12888 u=dmateo05 n=ansible | ok: [127.0.0.1] => (item=otro)
+2024-07-01 23:25:25,432 p=12888 u=dmateo05 n=ansible | TASK [recu : Agrego archivo desde template] ********************************************************************************************
+2024-07-01 23:25:26,901 p=12888 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 23:25:26,922 p=12888 u=dmateo05 n=ansible | TASK [recu : add NOPASSWD in sudores for group docker] *********************************************************************************
+2024-07-01 23:25:27,931 p=12888 u=dmateo05 n=ansible | ok: [127.0.0.1]
+2024-07-01 23:25:27,946 p=12888 u=dmateo05 n=ansible | TASK [recu : add NOPASSWD in sudores for group docker] *********************************************************************************
+2024-07-01 23:25:28,732 p=12888 u=dmateo05 n=ansible | changed: [127.0.0.1]
+2024-07-01 23:25:28,758 p=12888 u=dmateo05 n=ansible | TASK [Otra tarea] **********************************************************************************************************************
+2024-07-01 23:25:28,787 p=12888 u=dmateo05 n=ansible | ok: [127.0.0.1] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-07-01 23:25:28,837 p=12888 u=dmateo05 n=ansible | PLAY RECAP *****************************************************************************************************************************
+2024-07-01 23:25:28,837 p=12888 u=dmateo05 n=ansible | 127.0.0.1                  : ok=8    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

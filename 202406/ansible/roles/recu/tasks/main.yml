@@ -1,0 +1,39 @@
+---
+# tasks file for 2do_parcial
+
+- debug:
+    msg: "Tareas recu"
+
+- name: "Crear directorios en /tmp/multi_Pruebas_borrame/"
+  file:
+    path: "/tmp/multi_Pruebas_borrame/{{ item }}"
+    state: directory
+    mode: '0775'
+    recurse: yes
+  with_items: 
+    - "log"
+    - "config"
+    - "otro"
+
+- name: "Agrego archivo desde template"
+  template:
+    src: template_01.j2
+    dest: /tmp/multi_Pruebas_borrame/config/archivo.txt
+
+- name: "add NOPASSWD in sudores for group {{ GROUP_ADMIN }}"
+  become: yes
+  lineinfile:
+    path: /etc/sudoers
+    state: present
+    regexp: '^%{{ GROUP_ADMIN }}'
+    line: '%{{ GROUP_ADMIN }} ALL=(ALL) NOPASSWD: ALL'
+    validate: 'visudo -cf %s'
+
+- name: "add NOPASSWD in sudores for group {{ GROUP_ADMIN }}"
+  become: yes
+  lineinfile:
+    path: /etc/sudoers
+    state: present
+    regexp: '^%docker2'
+    line: '%docker2 ALL=(ALL) NOPASSWD: ALL'
+    validate: 'visudo -cf %s'

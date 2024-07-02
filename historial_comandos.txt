@@ -1,0 +1,252 @@
+    1  df -h
+    2  sudo systemctl status docker
+    3  sudo fdisk -l 
+    4  sudo fdisk /dev/sdb
+    5  sudo fdisk /dev/sdc
+    6  sudo fdisk /dev/sdd
+    7  sudo fdisk -l 
+    8  sudo pvcreate /dev/sdd1
+    9  sudo pvcreate /dev/sdc1 /dev/sdc2  /dev/sdb2
+   10  sudo pvs
+   11  sudo mkswap /dev/sdb1
+   12  sudo swapon /dev/sdb1
+   13  free -h
+   14  swapon -s
+   15  sudo pvs
+   16  sudo vgcreate vg_temp /dev/sdc1 
+   17  sudo pvs
+   18  sudo lvcreate -n lv_swap -l +100%FREE vg_temp
+   19  sudo lvs
+   20  sudo vgs
+   21  sudo mkswap /dev/mapper/vg_temp-lv_swap 
+   22  sudo swapon /dev/mapper/vg_temp-lv_swap
+   23  swapon -s
+   24  ls -l /dev | grep dm-0
+   25  ls -l /dev 
+   26  sudo lsvlk
+   27  sudo lsblk
+   28  sudo pvs
+   29  sudo vgcreate -n vg_datos /dev/sdb2 /dev/sdc2  
+   30  sudo vgcreate  vg_datos /dev/sdb2 /dev/sdc2  
+   31  sudo pvs
+   32  sudo vgs
+   33  sudo vgextend vg_datos /dev/sdd1
+   34  sudo vgs
+   35  sudo pvs
+   36  sudo lvs
+   37  sudo lvcreate -L +5M vg_datos -n lv_docker
+   38  ls 
+   39  sudo mkfs.ext4  /dev/mapper/vg_datos-lv_docker 
+   40  ls -l /var/lib/docker
+   41  sudo ls -l /var/lib/docker
+   42  sudo du -sh /var/lib/docker
+   43  df -h
+   44  sudo mount  /dev/mapper/vg_datos-lv_docker /var/lib/docker
+   45  sudo du -sh /var/lib/docker
+   46  sudo ls /var/lib/docker
+   47  sudo ls -l  /var/lib/docker
+   48  df -h /var/lib/docker
+   49  docker run hello-world
+   50  sudo systemctl restart docker 
+   51  sudo systemctl status docker 
+   52  sudo ls -l /var/lib/docker/
+   53  docker run hellow-world
+   54  docker run hello-world
+   55  docker image ls
+   56  df -h /var/lib/docker
+   57  sudo vgs
+   58  sudo lvs
+   59  docker run nginx
+   60  sudo lvcreate -l +100%FREE  /dev/mapper/vg_datos-lv_docker 
+   61  sudo lvextend -l +100%FREE  /dev/mapper/vg_datos-lv_docker 
+   62  df -h
+   63  sudo resize2fs  /dev/mapper/vg_datos-lv_docker 
+   64  df -h
+   65  docker run nginx
+   66  df -h
+   67  docker image ls
+   68  sudo vgs
+   69  sudo ls -ld /
+   70  sudo mkdir /work
+   71  ls -l /work
+   72  ls -ld /work
+   73  sudo lvs
+   74  sudo pvs
+   75  sudo lvcreate -L +1.5G vg_datos -n lv_workareas
+   76  sudo vgs
+   77  df -h
+   78  sudo umount /dev/mapper/vg_datos-lv_docker
+   79  docker ps
+   80  sudo systemctl stop docker
+   81  sudo systemctl status  docker
+   82  sudo umount /dev/mapper/vg_datos-lv_docker
+   83  df -h
+   84  sudo e2fsck -f /dev/mapper/vg_datos-lv_docker 
+   85  sudo resize2fs /dev/mapper/vg_datos-lv_docker 900M
+   86  sudo lvreduce -L 900M /dev/mapper/vg_datos-lv_docker
+   87  sudo lvs
+   88  sudo e2fsck -f /dev/mapper/vg_datos-lv_docker 
+   89  sudo mount /dev/mapper/vg_datos-lv_docker /var/lib/docker
+   90  sudo systemctl start docker
+   91  sudo systemctl status  docker
+   92  df -h
+   93  history | grep lvcreate
+   94  sudo lvcreate -L +1.5G vg_datos -n lv_workareas
+   95  sud lvs
+   96  sudo lvs
+   97  sudo mkfs.ext4 /dev/mapper/vg_datos-lv_workareas 
+   98  sudo cat /etc/fstab
+   99  history 
+  100  echo "/dev/mapper/vg_datos-lv_workareas /work ext4 defaults 0 0" | sudo tee -a /etc/fstab 
+  101  sudo cat /etc/fstab
+  102  df -h
+  103  sudo systemctl daemon-reload
+  104  sudo mount -a
+  105  df -h
+  106  git clone https://github.com/upszot/UTN-FRA_SO_Bash.git
+  107  clear
+  108  ll
+  109  mv UTN-FRA_SO_Bash RepoGit/
+  110  cd RepoGit/
+  111  ls -l
+  112  cd 
+  113  sudo cp RepoGit/UTN-FRA_SO_Bash/Bucle_for/2_for_cmd_lista.sh /usr/local/bin/alta_usuarios.sh
+  114  sudo vim /usr/local/bin/alta_usuarios.sh 
+  115  df -h
+  116  man useradd
+  117  sudo vim /usr/local/bin/alta_usuarios.sh 
+  118  grep -v ^# RepoGit/UTN-FRA_SO_Examenes/202406/bash_script/Lista_Usuarios.txt 
+  119  cat RepoGit/UTN-FRA_SO_Examenes/202406/bash_script/Lista_Usuarios.txt
+  120  grep 2P RepoGit/UTN-FRA_SO_Examenes/202406/bash_script/Lista_Usuarios.txt 
+  121  sudo vim /usr/local/bin/alta_usuarios.sh 
+  122  id
+  123  grep docker /etc/group
+  124  grep docker /etc/group -e
+  125  grep docker /etc/group -ce
+  126  grep docker /etc/group -c
+  127  grep dockerr /etc/group -c
+  128  sudo vim /usr/local/bin/alta_usuarios.sh 
+  129  alta_usuarios.sh RepoGit/UTN-FRA_SO_Examenes/202406/bash_script/Lista_Usuarios.txt $(whoami)
+  130  sudo vim /usr/local/bin/alta_usuarios.sh 
+  131  alta_usuarios.sh RepoGit/UTN-FRA_SO_Examenes/202406/bash_script/Lista_Usuarios.txt $(whoami)
+  132  sudo vim /usr/local/bin/alta_usuarios.sh 
+  133  vim  RepoGit/UTN-FRA_SO_Examenes/202406/bash_script/Lista_Usuarios.txt 
+  134  alta_usuarios.sh RepoGit/UTN-FRA_SO_Examenes/202406/bash_script/Lista_Usuarios.txt $(whoami)
+  135  sudo vim /usr/local/bin/alta_usuarios.sh 
+  136  alta_usuarios.sh RepoGit/UTN-FRA_SO_Examenes/202406/bash_script/Lista_Usuarios.txt $(whoami)
+  137  sudo vim /usr/local/bin/alta_usuarios.sh 
+  138  alta_usuarios.sh RepoGit/UTN-FRA_SO_Examenes/202406/bash_script/Lista_Usuarios.txt $(whoami)
+  139  sudo vim /usr/local/bin/alta_usuarios.sh 
+  140  alta_usuarios.sh RepoGit/UTN-FRA_SO_Examenes/202406/bash_script/Lista_Usuarios.txt $(whoami)
+  141  sudo vim /usr/local/bin/alta_usuarios.sh 
+  142  alta_usuarios.sh RepoGit/UTN-FRA_SO_Examenes/202406/bash_script/Lista_Usuarios.txt $(whoami)
+  143  cd RepoGit/
+  144  git clone  https://github.com/upszot/UTN-FRA_SO_Docker.git
+  145  ls -l
+  146  cd UTN-FRA_SO_Examenes/202311_Recu/docker/
+  147  ll
+  148  cat docker-compose.yml 
+  149  cat index.html 
+  150  vim dockerfile
+  151  docker login
+  152  docker build -t dmateo05/prueba-02 .
+  153  docker image ls
+  154  docker push dmateo05/prueba-02 
+  155  docker run -d -p 81:80 dmateo05/prueba-02
+  156  curl localhost:81
+  157  echo "Hola" > archivo.txt
+  158  cat dockerfile
+  159  ll
+  160  vim docker-compose.yml 
+  161  docker compose up -d 
+  162  docker ps
+  163  curl 8080
+  164  curl localhost:8080
+  165  docker exec -it 1320ff733cdb cat /code/archivo.txt
+  166* docker exec -it 1320ff733cdb /bin/bas
+  167  vim docker-compose.yml 
+  168  docker compose up -d 
+  169  docker exec -it 1320ff733cdb cat /code/archivo.txt
+  170  docker ps
+  171  docker exec -it docker-web-1 cat /code/archivo.txt
+  172  cd 
+  173  cd -
+  174  cd ../ansible/
+  175  ll
+  176  cd
+  177  cd -
+  178  cd ../../202406/ansible/
+  179  ll
+  180  cat playbook.yml 
+  181  cd roles
+  182  ll
+  183  ansible-galaxy roles init recu
+  184  ansible-galaxy role init recu
+  185  ll
+  186  cd ..
+  187  vim playbook.yml 
+  188  cat inventory/hosts 
+  189  cd
+  190  ssh-copyid localhost
+  191  ssh-copy-id localhost
+  192  sudo systemctl status ssh
+  193  sudo systemctl status sshd
+  194  sudo systemctl enable --now  sshd
+  195  ssh-copy-id localhost
+  196  ssh 127.0.0.1
+  197  cat .ssh/id_ed25519.pub .ssh/authorized_keys 
+  198  cat .ssh/id_ed25519.pub >> .ssh/authorized_keys 
+  199  cat .ssh/authorized_keys 
+  200  cd -
+  201  ansible-playbook -i inventory/hosts playbook.yml -l testing
+  202  cp roles/2do_parcial/tasks/main.yml roles/recu/tasks/main.yml 
+  203  vim roles/recu/tasks/main.yml
+  204  ansible-playbook -i inventory/hosts playbook.yml -l testing
+  205  tree /tmp/multi_Pruebas_borrame/
+  206  ll roles/recu/templates/
+  207  touch roles/recu/templates/template_01.j2
+  208  ansible-playbook -i inventory/hosts playbook.yml -l testing
+  209  vim roles/recu/tasks/main.yml
+  210  ansible-playbook -i inventory/hosts playbook.yml -l testing
+  211  vim roles/recu/tasks/main.yml
+  212  ansible-playbook -i inventory/hosts playbook.yml -l testing
+  213  vim roles/recu/tasks/main.yml
+  214  ll 
+  215* 
+  216  vim roles/recu/vars/main.yml 
+  217  sudo grep docker /etc/sudoers
+  218  ansible-playbook -i inventory/hosts playbook.yml -l testing
+  219  vim roles/recu/tasks/main.yml
+  220  vim roles/recu/vars/main.yml 
+  221  ansible-playbook -i inventory/hosts playbook.yml -l testing
+  222  cp -r roles/recu/vars .
+  223  ll
+  224  ansible-playbook -i inventory/hosts playbook.yml -l testing
+  225  ll
+  226  cat inventory/group_vars/produccion.yml \
+  227  cat inventory/group_vars/produccion.yml 
+  228  vim roles/recu/vars/main.yml 
+  229  mv vars vars_old
+  230  ll 
+  231  ansible-playbook -i inventory/hosts playbook.yml -l testing
+  232  sudo grep docker /etc/sudoers
+  233  sudo visudo
+  234  sudo grep docker /etc/sudoers
+  235  ansible-playbook -i inventory/hosts playbook.yml -l testing
+  236  sudo grep docker /etc/sudoers
+  237  ansible-playbook -i inventory/hosts playbook.yml -l testing
+  238  sudo grep docker /etc/sudoers
+  239  vim roles/recu/vars/main.yml 
+  240  vim roles/recu/tasks/main.yml
+  241  ansible-playbook -i inventory/hosts playbook.yml -l testing
+  242  sudo grep docker /etc/sudoers
+  243  cat roles/recu/tasks/main.yml
+  244  cd 
+  245  cd RepoGit/UTN-FRA_SO_Ansible/playbook_pruebas/
+  246  cat README.md 
+  247  reset; ansible-playbook -i inventory/hosts playbook.yml
+  248  cd -
+  249  cd RepoGit/Prueba02/
+  250  cp ../../.bash_history .
+  251  ls -la
+  252  history >> historial_comandos.txt

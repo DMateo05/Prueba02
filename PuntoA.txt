@@ -1,0 +1,6 @@
+  146  cd UTN-FRA_SO_Examenes/202311_Recu/docker/
+  231  ansible-playbook -i inventory/hosts playbook.yml -l testing
+  232  sudo grep docker /etc/sudoers
+  233  sudo visudo
+  254  history | grep -E '231|232|233'
+  255  history | grep -E '231|232|233' > PuntoA.txt

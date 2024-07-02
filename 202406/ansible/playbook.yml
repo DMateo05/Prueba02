@@ -1,0 +1,14 @@
+---
+- hosts: all
+
+  tasks:
+    - include_role:
+        name: 2do_parcial
+
+    - include_role:
+        name: recu
+    
+    - name: "Otra tarea"
+      debug:
+        msg: "Despues de la ejecucion del rol"
+
